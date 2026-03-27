@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>Florist & Toko Bunga | Buket Cantik Segar</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Poppins', 'Roboto', sans-serif;
+    background: #fef9f0;
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+    background: #6b8c5c;
+    color: white;
+    padding: 16px 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    border-bottom: 2px solid #f9c97c;
+}
+
+.navbar h2 {
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff, #fff3cf);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Marquee */
+.marquee {
+    background: linear-gradient(95deg, #f7b05e, #f9d56e);
+    color: #3a5e3a;
+    padding: 12px;
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.marquee span {
+    display: inline-block;
+    animation: jalan 22s linear infinite;
+    white-space: nowrap;
+    letter-spacing: 1px;
+}
+
+@keyframes jalan {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(145deg, #ffffff, #fff9ef);
+    padding: 40px 20px 50px;
+    text-align: center;
+    border-bottom: 1px solid #ffefcf;
+}
+
+.hero-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 28px;
+}
+
+.hero img {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 32px;
+    box-shadow: 0 18px 28px -8px rgba(0,0,0,0.12);
+    transition: all 0.3s ease;
+    background: #faf3e0;
+    border: 1px solid #ffe0b5;
+}
+
+.hero img:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 24px 32px -12px rgba(107,140,92,0.3);
+    border-color: #6b8c5c;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin: 18px 0 12px;
+    color: #5c6e3e;
+    font-weight: 800;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #a56b3a;
+    margin-bottom: 28px;
+}
+
+/* Button Global */
+.btn {
+    background: linear-gradient(95deg, #8baa7a, #6b8c5c);
+    color: white;
+    padding: 14px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 60px;
+    text-decoration: none;
+    transition: all 0.25s;
+    box-shadow: 0 8px 18px rgba(107,140,92,0.3);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 28px rgba(107,140,92,0.5);
+    background: linear-gradient(95deg, #9cbd88, #7ba064);
+}
+
+/* Section */
+.section {
+    padding: 48px 24px;
+    text-align: center;
+    background: white;
+    margin: 24px 18px;
+    border-radius: 40px;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.04);
+    transition: all 0.2s;
+    border: 1px solid #ffe8d4;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 28px;
+    color: #6b8c5c;
+    position: relative;
+    display: inline-block;
+}
+
+.section h2:after {
+    content: '';
+    display: block;
+    width: 70%;
+    height: 3px;
+    background: #f9c97c;
+    margin: 10px auto 0;
+    border-radius: 4px;
+}
+
+/* Grid Keunggulan */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    background: #fffcf5;
+    padding: 18px 24px;
+    border-radius: 48px;
+    width: 240px;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    border: 1px solid #ffefcf;
+    transition: all 0.2s;
+    color: #b5763a;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: #fff9ef;
+    border-color: #f9c97c;
+}
+
+/* Galeri Grid */
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 28px;
+    margin-top: 20px;
+}
+
+.gallery-grid img {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 32px;
+    box-shadow: 0 12px 20px rgba(0,0,0,0.08);
+    transition: 0.25s;
+    border: 2px solid #ffefdf;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+    border-color: #f9c97c;
+    box-shadow: 0 20px 28px rgba(0,0,0,0.12);
+}
+
+/* Testimoni */
+.testimoni-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.testimoni {
+    background: #ffffff;
+    padding: 26px;
+    border-radius: 32px;
+    width: 280px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+    text-align: left;
+    border: 1px solid #ffefdf;
+    transition: 0.2s;
+}
+
+.testimoni:hover {
+    background: #fffef7;
+    border-color: #f9d56e;
+}
+
+.stars {
+    color: #f9b93b;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.testi-text {
+    font-style: normal;
+    font-weight: 500;
+    margin: 12px 0 10px;
+    color: #7c5e3c;
+    line-height: 1.4;
+}
+
+.testi-name {
+    font-weight: bold;
+    color: #8baa7a;
+    margin-top: 12px;
+}
+
+/* Flash Sale */
+.flash {
+    background: linear-gradient(115deg, #fff7e8, #ffefdb);
+    border: 1px solid #f9c97c;
+    text-align: center;
+}
+
+.flash h2 {
+    color: #c4812a;
+}
+
+#timer {
+    font-size: 3rem;
+    font-family: 'Courier New', monospace;
+    background: #8b6b42;
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 70px;
+    color: #fff0cf;
+    letter-spacing: 5px;
+    margin: 15px 0;
+    font-weight: bold;
+    box-shadow: inset 0 0 5px #00000033, 0 8px 14px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+.footer {
+    background: #5c7a4a;
+    color: #fef2df;
+    text-align: center;
+    padding: 32px 20px;
+    margin-top: 30px;
+    font-size: 0.9rem;
+}
+
+.footer p {
+    margin: 8px 0;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .hero h1 {
+        font-size: 1.9rem;
+    }
+    .section {
+        margin: 16px 12px;
+        padding: 32px 16px;
+    }
+    .card {
+        width: 200px;
+        font-size: 0.9rem;
+    }
+    #timer {
+        font-size: 2rem;
+        padding: 8px 18px;
+        letter-spacing: 2px;
+    }
+    .gallery-grid img, .hero img {
+        width: 160px;
+        height: 160px;
+    }
+    .hero-images {
+        gap: 15px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+    <h2>🌸 FLORIST & TOKO BUNGA | BUKET SEGAR 🌸</h2>
+</div>
+
+<div class="marquee">
+    <span>💐 GRATIS ONGKIR • BUNGA SEGAR LANGSUNG DARI KEBUN • BUKET CUSTOM • PROMO HARI INI 💐</span>
+</div>
+
+<!-- HERO SECTION dengan gambar bunga (placeholder + URL asli) -->
+<div class="hero">
+    <div class="hero-images">
+        <img src="https://tangselmedia.com/wp-content/uploads/2019/10/Rekomendasi-Toko-Bunga-di-Tangsel-asliee.jpg" 
+             alt="Toko Bunga Buket Cantik" 
+             onerror="this.onerror=null; this.src='https://placehold.co/400x400/f8edda/c9813a?text=Buket+Bunga+Cantik'">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTvt0FpepWrllt7sDlK6P9jGRNuM-GcjxZ6JVMPP-qFy-6wg0WrLrBkNEXdpxzyaWzynH9O4xTHCW8P05yrSDbipieD3LEOB76pw89riw8cywrnQnVZu6P1mT9trdwJoh2j7gcdCZ4L1bq_WcsXypbYqB8QpUasUHZu5dKwkCz_hopum2PSRVhKlchoBC0/s448/TOKO%20BUNGA%20TERDEKAT.jpg" 
+             alt="Rangkaian Bunga Segar" 
+             onerror="this.onerror=null; this.src='https://placehold.co/400x400/f8edda/c9813a?text=Rangkaian+Bunga'">
+        <img src="https://www.orchid-florist.com/public/themes/orchid/frontend/img/pik.jpg" 
+             alt="Buket Premium Toko Bunga" 
+             onerror="this.onerror=null; this.src='https://placehold.co/400x400/f8edda/c9813a?text=Buket+Premium'">
+    </div>
+    <h1>Toko Bunga & Florist</h1>
+    <p>Buket segar • Rangkaian elegan • Pengiriman cepat untuk semua momen</p>
+    <a href="#" class="btn" id="heroBtn">💐 Pesan Buket Sekarang 💐</a>
+</div>
+
+<!-- TENTANG TOKO -->
+<div class="section">
+    <h2>🌼 Tentang Toko Bunga Kami 🌼</h2>
+    <p style="max-width: 850px; margin: 0 auto; font-size: 1.1rem; line-height: 1.5; color:#a56b3a;">
+        Toko bunga kami menyediakan rangkaian bunga segar berkualitas premium untuk berbagai acara: ulang tahun, pernikahan, anniversary, 
+        kelulusan, hingga ungkapan simpati. Setiap buket dirangkai dengan tangan oleh florist profesional menggunakan bunga impor dan lokal 
+        pilihan. Kami melayani pengiriman ke seluruh kota dengan jaminan kesegaran sampai tujuan.
+    </p>
+</div>
+
+<!-- LAYANAN -->
+<div class="section">
+    <h2>✨ Layanan Kami ✨</h2>
+    <div class="grid">
+        <div class="card">💐 Buket Bunga Segar</div>
+        <div class="card">🎁 Buket Snack & Coklat</div>
+        <div class="card">💍 Dekorasi Pernikahan</div>
+        <div class="card">🚚 Pengiriman Cepat</div>
+        <div class="card">✍️ Kartu Ucapan Custom</div>
+        <div class="card">🌹 Bunga Papan & Standing</div>
+        <div class="card">🎀 Buket Graduation</div>
+        <div class="card">💖 Rangkaian Valentine</div>
+    </div>
+</div>
+
+<!-- GALERI PRODUK (menggunakan gambar yang sama dengan fallback) -->
+<div class="section">
+    <h2>📸 Galeri Buket & Rangkaian</h2>
+    <div class="gallery-grid">
+        <img src="https://tangselmedia.com/wp-content/uploads/2019/10/Rekomendasi-Toko-Bunga-di-Tangsel-asliee.jpg" 
+             alt="Buket Mawar Merah" 
+             onerror="this.onerror=null; this.src='https://placehold.co/400x400/f8edda/c9813a?text=Buket+Mawar'">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTvt0FpepWrllt7sDlK6P9jGRNuM-GcjxZ6JVMPP-qFy-6wg0WrLrBkNEXdpxzyaWzynH9O4xTHCW8P05yrSDbipieD3LEOB76pw89riw8cywrnQnVZu6P1mT9trdwJoh2j7gcdCZ4L1bq_WcsXypbYqB8QpUasUHZu5dKwkCz_hopum2PSRVhKlchoBC0/s448/TOKO%20BUNGA%20TERDEKAT.jpg" 
+             alt="Rangkaian Sunflower" 
+             onerror="this.onerror=null; this.src='https://placehold.co/400x400/f8edda/c9813a?text=Buket+Sunflower'">
+        <img src="https://www.orchid-florist.com/public/themes/orchid/frontend/img/pik.jpg" 
+             alt="Buket Lily Premium" 
+             onerror="this.onerror=null; this.src='https://placehold.co/400x400/f8edda/c9813a?text=Buket+Lily'">
+        <img src="https://placehold.co/400x400/f8edda/c9813a?text=Buket+Campur" 
+             alt="Buket Campur Warna">
+    </div>
+    <p style="margin-top: 22px; color: #b47c4e;">*Bunga segar langsung dari petani • Bisa request warna & jenis bunga favorit</p>
+</div>
+
+<!-- TESTIMONI PELANGGAN -->
+<div class="section">
+    <h2>💬 Testimoni Pelanggan</h2>
+    <div class="testimoni-list">
+        <div class="testimoni">
+            <div class="stars">★★★★★</div>
+            <div class="testi-text">"Buketnya cantik banget, sesuai request. Pengiriman tepat waktu, bunga masih segar. Makasih Florist!"</div>
+            <div class="testi-name">— Sarah, Jakarta</div>
+        </div>
+        <div class="testimoni">
+            <div class="stars">★★★★★</div>
+            <div class="testi-text">"Rangkaian bunganya elegan dan harum. Suami saya sangat senang dapat kejutan ulang tahun. Recommended!"</div>
+            <div class="testi-name">— Rina, Bandung</div>
+        </div>
+        <div class="testimoni">
+            <div class="stars">★★★★★</div>
+            <div class="testi-text">"Pertama kali pesan online, ternyata kualitasnya bagus. Bunga mawar merah segar dan packing rapi."</div>
+            <div class="testi-name">— Dedi, Surabaya</div>
+        </div>
+        <div class="testimoni">
+            <div class="stars">★★★★★</div>
+            <div class="testi-text">"Pelayanan ramah, bisa kustomisasi buket sesuai budget. Pasti pesan lagi di sini."</div>
+            <div class="testi-name">— Melisa, Tangerang</div>
+        </div>
+    </div>
+</div>
+
+<!-- FLASH SALE DENGAN COUNTDOWN -->
+<div class="section flash">
+    <h2>⏳ FLASH SALE BUNGA SEGAR ⏳</h2>
+    <p style="font-size: 1.2rem; font-weight: 500;">Diskon 30% + GRATIS KARTU UCATAN + FREE ONGKIR</p>
+    <p>Promo spesial berakhir dalam:</p>
+    <div id="timer">00:10:00</div>
+    <a href="#" class="btn" id="flashBtn">🎁 Pesan Buket Sekarang 🎁</a>
+    <p style="margin-top: 16px; font-size: 0.85rem;">*Promo berlaku untuk semua buket, minimal pembelian Rp150.000</p>
+</div>
+
+<!-- BONUS & LAYANAN -->
+<div class="section" style="background: #fffcf5;">
+    <h2>🎁 Bonus Setiap Pembelian</h2>
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(210px,1fr));">
+        <div class="card">💌 Kartu Ucapan Eksklusif</div>
+        <div class="card">🎀 Pita Custom Nama</div>
+        <div class="card">📦 Kemasan Premium</div>
+        <div class="card">📸 Dokumentasi Buket</div>
+        <div class="card">🚚 Free Ongkir (Min. 2 Buket)</div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    <p>© 2026 Florist & Toko Bunga | Bunga Segar untuk Setiap Momen</p>
+    <p>🌷 Buka setiap hari 08.00 - 20.00 • Melayani pesanan untuk seluruh Indonesia 🌷</p>
+    <p>📞 Hubungi kami: 0812-3456-7890 • Instagram: @toko_bunga_official</p>
+</div>
+
+<script>
+// Timer countdown 10 menit (600 detik)
+let time = 600;
+const timerElement = document.getElementById("timer");
+
+function updateTimerDisplay() {
+    let minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+    timerElement.innerHTML = 
+        (minutes < 10 ? "0" : "") + minutes + ":" + 
+        (seconds < 10 ? "0" : "") + seconds;
+    
+    if (time <= 0) {
+        timerElement.innerHTML = "00:00";
+        clearInterval(timerInterval);
+        const flashBtn = document.getElementById("flashBtn");
+        if(flashBtn) {
+            flashBtn.textContent = "Promo Habis! Cek Diskon Lain";
+            flashBtn.style.background = "#9b9b8a";
+            flashBtn.style.boxShadow = "none";
+            flashBtn.style.cursor = "not-allowed";
+            flashBtn.removeAttribute("href");
+        }
+        const flashDiv = document.querySelector('.flash');
+        if(flashDiv && !document.querySelector('.flash-expired-note')) {
+            const note = document.createElement('p');
+            note.className = 'flash-expired-note';
+            note.style.color = '#b45f2b';
+            note.style.fontWeight = 'bold';
+            note.style.marginTop = '12px';
+            note.innerText = '⏰ Flash sale berakhir, tapi masih ada promo paket buket hemat! Hubungi CS.';
+            flashDiv.appendChild(note);
+        }
+    }
+}
+
+let timerInterval = setInterval(() => {
+    if(time > 0) {
+        time--;
+        updateTimerDisplay();
+    } else {
+        clearInterval(timerInterval);
+        updateTimerDisplay();
+    }
+}, 1000);
+
+updateTimerDisplay();
+
+// efek visual timer
+setInterval(() => {
+    const timerDiv = document.getElementById('timer');
+    if(time <= 60 && time > 0 && timerDiv) {
+        timerDiv.style.transition = '0.1s';
+        timerDiv.style.color = '#ffdd99';
+        timerDiv.style.textShadow = '0 0 6px #ff9640';
+        timerDiv.style.backgroundColor = '#8f6b42';
+    } else if(time > 60 && timerDiv) {
+        timerDiv.style.color = '#fff0cf';
+        timerDiv.style.textShadow = 'none';
+        timerDiv.style.backgroundColor = '#8b6b42';
+    }
+}, 500);
+
+// Fungsi tombol beli (Hero & Flash Sale)
+const allBtns = document.querySelectorAll('.btn');
+allBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        if(btn.id === "flashBtn" && time <= 0) {
+            e.preventDefault();
+            alert("⏰ Maaf, flash sale sudah berakhir. Namun masih ada promo buket spesial! Hubungi admin.");
+            return;
+        }
+        e.preventDefault();
+        let productMsg = "Buket Bunga Segar (Customizable)";
+        let message = `✨ ${productMsg} ditambahkan ke keranjang! ✨\nDapatkan bonus kartu ucapan & free ongkir.`;
+        alert(message);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+});
+
+// Interaksi galeri: info jenis bunga
+const galleryImgs = document.querySelectorAll('.gallery-grid img');
+galleryImgs.forEach((img, idx) => {
+    img.addEventListener('click', () => {
+        let flowers = ["Buket Mawar Merah", "Buket Sunflower", "Buket Lily Putih", "Buket Campur Warna"];
+        alert(`🌸 ${flowers[idx % flowers.length]}\nTersedia berbagai variasi ukuran dan tambahan boneka/coklat.`);
+    });
+});
+</script>
+</body>
+</html>
